@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.MainPage">
+
+    <ScrollView>
+        <HorizontalStackLayout
+            Spacing="30"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+
+            <VerticalStackLayout x:Name="FirstVSL" WidthRequest="200" HeightRequest="200" BackgroundColor="Purple">
+               
+                <Frame x:Name="ChildDrag" WidthRequest="50" HeightRequest="50" BackgroundColor="Aqua" HorizontalOptions="Center" VerticalOptions="Center"> 
+                    <Frame.GestureRecognizers>
+                        <DragGestureRecognizer DragStarting="DragStarting" CanDrag="True" ></DragGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+
+                <VerticalStackLayout.GestureRecognizers>
+                    <!--<DropGestureRecognizer DragOver="DragOver"></DropGestureRecognizer>-->
+                    <DropGestureRecognizer AllowDrop="True" Drop="DropGestureRecognizer_Drop"/>
+                </VerticalStackLayout.GestureRecognizers>
+            </VerticalStackLayout>
+
+           
+
+            <VerticalStackLayout x:Name="SecondVSL" WidthRequest="200" HeightRequest="200" BackgroundColor="Plum">
+                <VerticalStackLayout.GestureRecognizers>
+                    <DropGestureRecognizer AllowDrop="True" Drop="DropGestureRecognizer_Drop"/>
+                    <!--<DropGestureRecognizer DragOver="DragOver"></DropGestureRecognizer>-->
+                    
+                </VerticalStackLayout.GestureRecognizers>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout x:Name="ThirdVSL" WidthRequest="200" HeightRequest="200" BackgroundColor="Wheat">
+                <VerticalStackLayout.GestureRecognizers>
+                    <DropGestureRecognizer AllowDrop="True" Drop="DropGestureRecognizer_Drop"/>
+                    <!--<DropGestureRecognizer DragOver="DragOver"></DropGestureRecognizer>-->
+                </VerticalStackLayout.GestureRecognizers>
+            </VerticalStackLayout>
+
+           
+        </HorizontalStackLayout>
+
+
+        
+    </ScrollView>
+
+</ContentPage>
